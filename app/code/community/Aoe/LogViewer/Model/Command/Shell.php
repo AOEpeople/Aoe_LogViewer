@@ -46,7 +46,7 @@ class Aoe_LogViewer_Model_Command_Shell extends Aoe_LogViewer_Model_Command_Abst
         return sprintf(
             $this->getCommandString(),
             escapeshellarg($this->getLog()->getFilePath()),
-            30
+            50
         );
     }
 
