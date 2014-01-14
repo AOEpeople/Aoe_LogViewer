@@ -5,7 +5,9 @@
             <td style="width:50%;"><h3 class="icon-head head-aoelogviewer"><?php echo $this->__('Log Viewer') ?></h3></td>
             <td class="form-buttons">
                 <script type="text/javascript">
-                    var logFormData = <?php echo $this->getLogJson(); ?>;
+                    var logFormData = <?php echo $this->getLogJson() ?>;
+                    var startingLog = "<?php echo $this->getCurrentLogId() ?>";
+                    var startingCommand = "<?php echo $this->getCurrentCommandId() ?>";
                     window.onload = function () {
                         var logselect = document.getElementById('logselect');
                         for (var key in logFormData) {
@@ -13,10 +15,13 @@
                                 logFormData[key].name,
                                 logFormData[key].value
                             ));
+                            if(key == startingLog) {
+                                logselect.selectedIndex = (logselect.length - 1);
+                            }
                         }
                         logselect.onchange = updateCommandsForCurrentLog;
                         updateCommandsForCurrentLog();
-                    }
+                    };
                     function updateCommandsForCurrentLog() {
                         var logselect = document.getElementById('logselect');
                         var selectedLog = logselect.options[logselect.selectedIndex].value;
@@ -27,6 +32,9 @@
                                 logFormData[selectedLog].commands[key].name,
                                 logFormData[selectedLog].commands[key].value
                             ));
+                            if(selectedLog == startingLog && key == startingCommand) {
+                                commandselect.selectedIndex = (commandselect.length - 1);
+                            }
                         }
                     }
                 </script>
