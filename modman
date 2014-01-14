@@ -1,5 +1,4 @@
-app/code/community/Aoe/LogViewer/								app/code/community/Aoe/LogViewer/
-app/etc/modules/*												app/etc/modules/
-app/design/adminhtml/default/default/template/aoe_logviewer/	app/design/adminhtml/default/default/template/aoe_logviewer/
-app/design/adminhtml/default/default/layout/aoe_logviewer/		app/design/adminhtml/default/default/layout/aoe_logviewer/
-# var/connect/*													var/connect/
+app/code/community/Aoe/LogViewer/
+app/etc/modules/Aoe_LogViewer.xml
+app/design/adminhtml/default/default/template/aoe_logviewer/
+app/design/adminhtml/default/default/layout/aoe_logviewer/

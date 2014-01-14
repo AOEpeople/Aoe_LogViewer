@@ -1,20 +1,19 @@
-<?php /* @var $this Aoe_LogViewer_Block_Adminhtml_Logoutput */ ?>
-
-<?php $_command = $this->getCommand(); /* @var $_command Aoe_LogViewer_Model_Command_Abstract */ ?>
-
+<?php
+/* @var $this Aoe_LogViewer_Block_Adminhtml_Logoutput */
+$_command = $this->getCommand(); /* @var $_command Aoe_LogViewer_Model_Command_Abstract */
+?>
 <style type="text/css">
-	.logoutput {
-		margin-top: 20px;
-		border: 1px solid #ccc;
-		background-color: white;
-		padding: 5px;
-		overflow: scroll;
-	}
+    .logoutput {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        background-color: white;
+        padding: 5px;
+        overflow: scroll;
+    }
 </style>
-
-<h4><?php echo $_command->getInfo(); ?></h4>
-
+<h4>
+    <?php echo $_command->getInfo(); ?>
+</h4>
 <pre class="logoutput">
-<?php echo htmlspecialchars($_command->getPlainOutput()) ?>
+    <?php echo htmlspecialchars($_command->getPlainOutput()) ?>
 </pre>
-
