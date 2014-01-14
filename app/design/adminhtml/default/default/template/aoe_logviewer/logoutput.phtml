@@ -11,9 +11,5 @@ $_command = $this->getCommand(); /* @var $_command Aoe_LogViewer_Model_Command_A
         overflow: scroll;
     }
 </style>
-<h4>
-    <?php echo $_command->getInfo(); ?>
-</h4>
-<pre class="logoutput">
-    <?php echo htmlspecialchars($_command->getPlainOutput()) ?>
-</pre>
+<h4><?php echo $_command->getInfo(); ?></h4>
+<pre class="logoutput"><?php echo htmlspecialchars($_command->getPlainOutput()) ?></pre>
